@@ -133,7 +133,6 @@ public class VehicleResponse {
     this.dealerId = dealerId;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -179,6 +178,20 @@ public class VehicleResponse {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
+  }
+  
+  /**
+   * Get respective VehicleAnswer object.
+   * 
+   * @return VehicleAnswer
+   */
+  public VehicleAnswer getVehicleAnswer() {
+	  VehicleAnswer answer = new VehicleAnswer();
+	  answer.setMake(this.getMake());
+	  answer.setModel(this.getModel());
+	  answer.setVehicleId(this.getVehicleId());
+	  answer.setYear(this.getYear());
+	  return answer;
   }
 
 }

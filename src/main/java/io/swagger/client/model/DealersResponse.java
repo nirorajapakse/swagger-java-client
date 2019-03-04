@@ -13,6 +13,7 @@
 
 package io.swagger.client.model;
 
+import java.util.List;
 import java.util.Objects;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -110,6 +111,20 @@ public class DealersResponse {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
+  }
+  
+  /**
+   * Get respective DealerAnswer object.
+   * 
+   * @param vehicles
+   * @return DealerAnswer
+   */
+  public DealerAnswer getDealerAnswer(List<VehicleAnswer> vehicles) {
+	  DealerAnswer answer = new DealerAnswer();
+	  answer.setDealerId(this.getDealerId());
+	  answer.setName(this.getName());
+	  answer.setVehicles(vehicles);
+	  return answer;
   }
 
 }
